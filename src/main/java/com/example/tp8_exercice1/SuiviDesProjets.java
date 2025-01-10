@@ -35,5 +35,5 @@ public class SuiviDesProjets {
     }
     public void afficherToutLesProjets(){System.out.println(ProjetSuivi.projets);}
     public void isAdmin(){}
-    public void voirAvancementProjet(){System.out.println(avancementProjet);}
+    public void voirAvancementProjet(){System.out.println(avancementProjet);  }
 }
