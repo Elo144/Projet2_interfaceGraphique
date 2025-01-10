@@ -9,6 +9,7 @@ public class Personnel {
     private String nomEmploye;
     private String historiqueEmploye;
 
+
     public Personnel(String dateEmbauche, int numeroemploye, String nomEmploye, String historiqueEmploye) {
         this.dateEmbauche = dateEmbauche;
         this.numeroemploye = numeroemploye;

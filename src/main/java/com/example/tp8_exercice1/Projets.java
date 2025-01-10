@@ -7,11 +7,13 @@ public class Projets {
     private int idProjet;
     private String nomProjet;
     private String dateProjet;
+    private ArrayList<Personnel> assigne =new ArrayList<>();
 
     public Projets(int idProjet, String nomProjet, String dateProjet) {
         this.idProjet = idProjet;
         this.nomProjet = nomProjet;
         this.dateProjet = dateProjet;
+
     }
 
     public int getIdProjet() {
@@ -61,6 +63,16 @@ public class Projets {
             }
         }
     }
+    public void assignePersonnel(Personnel p){
+        boolean a=true;
+        for(Personnel e : assigne){if(e==p){a=false;}}
+        if(a=true){
+        assigne.add(p);}
+    }
+    public void retirerPersonnel(Personnel p){
+        int a =assigne.size();
+        for(Personnel e :assigne){if(p==e){assigne.remove(p);}}
+        if(a==assigne.size()){System.out.println("cette personne n'est pas assigné au projet");}
 
-
+    }
 }
