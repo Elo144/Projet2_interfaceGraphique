@@ -31,8 +31,11 @@ public class Personnel {
     public String getHistoriqueEmploye() {
         return historiqueEmploye;
     }
-
     public Enum getRoleEmployé() {return roleEmployé;}
+
+    public void affecterRole(Enum r){
+        this.roleEmployé=r;
+    }
 //    //Fonction ObtenirRole()
 //    public void ObtenirRole() {
 //        System.out.println("Role = void");
