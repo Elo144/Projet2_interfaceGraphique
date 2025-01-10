@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tp8_exercice1.AffichageController">
+   <children>
+      <HBox layoutX="4.0" prefHeight="34.0" prefWidth="591.0">
+         <children>
+            <Label alignment="TOP_CENTER" prefHeight="27.0" prefWidth="359.0" text="Outil de gestion de taches collaboratif">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox layoutX="16.0" layoutY="51.0" prefHeight="58.0" prefWidth="567.0">
+         <children>
+            <Label text="Bienvenue" />
+         </children>
+      </HBox>
+      <HBox layoutX="78.0" layoutY="257.0" prefHeight="100.0" prefWidth="200.0" />
+      <Label layoutX="374.0" layoutY="228.0" prefHeight="34.0" prefWidth="104.0" text="Votre mail est :" />
+   </children>
+</AnchorPane>

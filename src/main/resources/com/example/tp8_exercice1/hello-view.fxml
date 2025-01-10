@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="463.0" prefWidth="489.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tp8_exercice1.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <Label fx:id="welcomeText" text="Formulaire d'authentification">
+      <font>
+         <Font name="System Bold" size="18.0" />
+      </font></Label>
+   <HBox prefHeight="31.0" prefWidth="450.0">
+      <children>
+         <Label prefHeight="27.0" prefWidth="114.0" text="Nom">
+            <HBox.margin>
+               <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
+            </HBox.margin>
+            <padding>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+         </Label>
+         <TextField fx:id="nom" onAction="#onNomButtonClick" prefHeight="27.0" prefWidth="185.0" promptText="Martin Burel">
+            <HBox.margin>
+               <Insets bottom="5.0" left="5.0" top="5.0" />
+            </HBox.margin>
+            <padding>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+         </TextField>
+      </children>
+   </HBox>
+   <HBox prefHeight="43.0" prefWidth="450.0">
+      <children>
+         <Label prefHeight="27.0" prefWidth="115.0" text="Password">
+            <padding>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+            <HBox.margin>
+               <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
+            </HBox.margin>
+         </Label>
+         <TextField fx:id="nom1" alignment="TOP_LEFT" prefHeight="27.0" prefWidth="185.0">
+            <padding>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+            <HBox.margin>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </HBox.margin>
+         </TextField>
+      </children>
+   </HBox>
+   <HBox alignment="TOP_CENTER" prefHeight="47.0" prefWidth="450.0">
+      <children>
+         <Button mnemonicParsing="false" onAction="#onValiderButtonClick" text="Valider">
+            <HBox.margin>
+               <Insets top="10.0" />
+            </HBox.margin>
+         </Button>
+         <Label id="welcomeText2" alignment="TOP_CENTER" textAlignment="CENTER" textFill="#22e418">
+            <HBox.margin>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </HBox.margin>
+            <padding>
+               <Insets top="10.0" />
+            </padding>
+         </Label>
+      </children>
+   </HBox>
+</VBox>
