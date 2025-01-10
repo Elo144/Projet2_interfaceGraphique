@@ -1,7 +1,9 @@
 package com.example.tp8_exercice1;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -84,5 +86,16 @@ public class HelloController {
     @FXML
     protected void onNomButtonClick() {
         welcomeText.setText("Welcome to JavaFX Application!");
+    }
+
+    public void onButtonInscriptionClick(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader2 = new FXMLLoader(HelloApplication.class.getResource("inscription-view.fxml"));
+        Parent sceneget2 = fxmlLoader2.load();
+        //Nouveau stage avec la scene2
+        Stage stage = (Stage) sceneget2.getScene().getWindow();
+        stage.setTitle("Formulaire d'inscription");
+        Scene scene2 = new Scene(sceneget2);
+        stage.setScene(scene2);
+        stage.show();
     }
 }

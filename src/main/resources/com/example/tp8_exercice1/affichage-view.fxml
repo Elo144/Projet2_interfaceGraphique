@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tp8_exercice1.AffichageController">
+<AnchorPane prefHeight="514.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tp8_exercice1.AffichageController">
    <children>
       <HBox layoutX="4.0" prefHeight="34.0" prefWidth="591.0">
          <children>
@@ -16,12 +20,29 @@
             </Label>
          </children>
       </HBox>
-      <HBox layoutX="16.0" layoutY="51.0" prefHeight="58.0" prefWidth="567.0">
+      <HBox layoutX="16.0" layoutY="51.0" prefHeight="27.0" prefWidth="567.0">
          <children>
-            <Label text="Bienvenue" />
+            <Label text="Bienvenue sur ton espace personnel !" />
          </children>
       </HBox>
-      <HBox layoutX="78.0" layoutY="257.0" prefHeight="100.0" prefWidth="200.0" />
-      <Label layoutX="374.0" layoutY="228.0" prefHeight="34.0" prefWidth="104.0" text="Votre mail est :" />
+      <HBox layoutX="16.0" layoutY="90.0" prefHeight="70.0" prefWidth="390.0">
+         <children>
+            <Label text="Tache : " />
+            <TextField prefHeight="62.0" prefWidth="335.0" />
+         </children>
+      </HBox>
+      <HBox layoutX="16.0" layoutY="172.0" prefHeight="44.0" prefWidth="359.0">
+         <children>
+            <Button mnemonicParsing="false" text="Ajouter une tache" />
+            <HBox prefHeight="44.0" prefWidth="70.0" />
+            <Button mnemonicParsing="false" text="Supprimer une tache" />
+         </children>
+      </HBox>
+      <HBox layoutX="14.0" layoutY="238.0" prefHeight="170.0" prefWidth="690.0">
+         <children>
+            <TitledPane animated="false" text="Projet" />
+            <ListView prefHeight="170.0" prefWidth="317.0" />
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

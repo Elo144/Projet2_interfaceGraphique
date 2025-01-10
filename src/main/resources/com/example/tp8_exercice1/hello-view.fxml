@@ -59,7 +59,7 @@
    </HBox>
    <HBox alignment="TOP_CENTER" prefHeight="47.0" prefWidth="450.0">
       <children>
-         <Button mnemonicParsing="false" onAction="#onValiderButtonClick" text="Valider">
+         <Button fx:id="connexionButton" mnemonicParsing="false" onAction="#onValiderButtonClick" text="Connexion">
             <HBox.margin>
                <Insets top="10.0" />
             </HBox.margin>
@@ -72,6 +72,16 @@
                <Insets top="10.0" />
             </padding>
          </Label>
+      </children>
+   </HBox>
+   <HBox prefHeight="38.0" prefWidth="416.0">
+      <children>
+         <Label prefHeight="18.0" prefWidth="105.0" text="Pas de compte ?">
+            <font>
+               <Font name="System Italic" size="12.0" />
+            </font>
+         </Label>
+         <Button fx:id="ButtonLogin" mnemonicParsing="false" onAction="#onHelloButtonClick" text="S'inscrire" textAlignment="CENTER" />
       </children>
    </HBox>
 </VBox>
