@@ -31,7 +31,7 @@ public class Projets {
     }
 
 
-    private List<Projets> projets = new ArrayList<>();
+    public List<Projets> projets = new ArrayList<>();
     //CREER
     public void creerProjet(Projets projet) {
         projets.add(projet);
@@ -46,6 +46,7 @@ public class Projets {
         }
         return null;
     }
+
 
     //MODIFIER
     public void modifierProjet(int idProjet, String nomProjet, String dateProjet) {

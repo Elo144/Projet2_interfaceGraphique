@@ -3,12 +3,12 @@ import java.util.ArrayList;
 
 public class SuiviDesProjets {
     private int suiviProjet;
-    private int idProjetSuivi;
+    private Projets ProjetSuivi;
     private Enum avancementProjet;
 
-    public SuiviDesProjets(Enum avancementProjet, int idProjetSuivi, int suiviProjet) {
+    public SuiviDesProjets(Enum avancementProjet, Projets ProjetSuivi, int suiviProjet) {
         this.avancementProjet = avancementProjet;
-        this.idProjetSuivi = idProjetSuivi;
+        this.ProjetSuivi = ProjetSuivi;
         this.suiviProjet = suiviProjet;
     }
 
@@ -16,10 +16,10 @@ public class SuiviDesProjets {
 
     public void setAvancementProjet(Enum avancementProjet) {this.avancementProjet = avancementProjet;}
 
-    public int getIdProjetSuivi() {return idProjetSuivi;}
+    public Projets getIdProjetSuivi() {return ProjetSuivi;}
 
-    public void setIdProjetSuivi(int idProjetSuivi) {
-        this.idProjetSuivi = idProjetSuivi;
+    public void setIdProjetSuivi(Projets ProjetSuivi) {
+        this.ProjetSuivi = ProjetSuivi;
     }
 
     public int getSuiviProjet() {
@@ -29,7 +29,7 @@ public class SuiviDesProjets {
     public void setSuiviProjet(int suiviProjet) {
         this.suiviProjet = suiviProjet;
     }
-    public void afficherToutLesProjets(){System.out.println();}
+    public void afficherToutLesProjets(){System.out.println(ProjetSuivi.projets);}
     public void isAdmin(){}
-    public void voirAvancementProjet(){}
+    public void voirAvancementProjet(){System.out.println(avancementProjet);}
 }
