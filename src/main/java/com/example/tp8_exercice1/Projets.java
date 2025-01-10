@@ -38,14 +38,17 @@ public class Projets {
 
     //MODIFIER
     public void modifierProjet(int idProjet, String nomProjet, String dateProjet) {
+        boolean a =true;
         for (Projets projet : projets) {
             if (projet.getIdProjet() == idProjet) {
                 projet.nomProjet = nomProjet;
                 projet.dateProjet = dateProjet;
                 System.out.println("Personnel modifie : " + projet);
+                a=false;
+                break;
             }
         }
-        System.out.println("Projet " + idProjet + " pas trouvé");
+        if(a==true){ System.out.println("Projet " + idProjet + " pas trouvé");}
     }
 
     //SUPPRIMER
