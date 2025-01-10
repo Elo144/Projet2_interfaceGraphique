@@ -5,6 +5,7 @@ public class SuiviDesProjets {
     private int suiviProjet;
     private Projets ProjetSuivi;
     private Enum avancementProjet;
+    private ArrayList<Taches> tasks =new ArrayList<>();
 
     public SuiviDesProjets(Enum avancementProjet, Projets ProjetSuivi, int suiviProjet) {
         this.avancementProjet = avancementProjet;
@@ -28,6 +29,9 @@ public class SuiviDesProjets {
 
     public void setSuiviProjet(int suiviProjet) {
         this.suiviProjet = suiviProjet;
+    }
+    public void  aFaire(Taches t){
+        tasks.add(t);
     }
     public void afficherToutLesProjets(){System.out.println(ProjetSuivi.projets);}
     public void isAdmin(){}
