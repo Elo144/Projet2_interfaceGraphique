@@ -8,12 +8,15 @@ public class Personnel {
     private String dateEmbauche;
     private String nomEmploye;
     private String historiqueEmploye;
+    private Enum roleEmployé;
 
-    public Personnel(String dateEmbauche, int numeroemploye, String nomEmploye, String historiqueEmploye) {
+
+    public Personnel(String dateEmbauche, int numeroemploye, String nomEmploye, String historiqueEmploye,Enum roleEmployé) {
         this.dateEmbauche = dateEmbauche;
         this.numeroemploye = numeroemploye;
         this.nomEmploye = nomEmploye;
         this.historiqueEmploye = historiqueEmploye;
+        this.roleEmployé = roleEmployé;
     }
 
     public int getNumeroemploye() {
@@ -28,8 +31,12 @@ public class Personnel {
     public String getHistoriqueEmploye() {
         return historiqueEmploye;
     }
+    public Enum getRoleEmployé() {return roleEmployé;}
 
-    //    //Fonction ObtenirRole()
+    public void affecterRole(Enum r){
+        this.roleEmployé=r;
+    }
+//    //Fonction ObtenirRole()
 //    public void ObtenirRole() {
 //        System.out.println("Role = void");
 //    }
@@ -42,12 +49,13 @@ public class Personnel {
     }
 
     //MODIFIER
-    public void modifierPersonnel(String dateEmbauche, int numeroemploye, String nomEmploye, String historiqueEmploye) {
+    public void modifierPersonnel(String dateEmbauche, int numeroemploye, String nomEmploye, String historiqueEmploye, Enum role) {
         for (Personnel employe : employes) {
             if (employe.getNumeroemploye() == numeroemploye) {
                 employe.nomEmploye = nomEmploye;
                 employe.dateEmbauche = dateEmbauche;
                 employe.historiqueEmploye = historiqueEmploye;
+                employe.roleEmployé =role;
                 System.out.println("Personnel modifié : " + employe);
             }
         }
@@ -74,6 +82,7 @@ public class Personnel {
                 ", nomEmploye='" + nomEmploye + '\'' +
                 ", historiqueEmploye='" + historiqueEmploye + '\'' +
                 ", employes=" + employes +
+                ", role employes=" + roleEmployé +
                 '}';
     }
 
