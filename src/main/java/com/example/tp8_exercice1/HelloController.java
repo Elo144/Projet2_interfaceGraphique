@@ -15,6 +15,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class HelloController {
@@ -30,13 +31,37 @@ public class HelloController {
     @FXML
     private TextField password;
 
+    //BOUTTON d'INSCRIPTION
     @FXML
-    protected void onHelloButtonClick() {
+    protected void onHelloButtonClick() throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(this.getClass().getResource("inscription-view.fxml"));
+        Scene scene = new Scene(loader.load());
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    //AFFICHER TEXTE dans texfield à coté de com
+    @FXML
+    protected void onNomButtonClick() {
         welcomeText.setText("Welcome to JavaFX Application!");
     }
 
+//    public void onButtonInscriptionClick(ActionEvent actionEvent) throws IOException {
+//        FXMLLoader fxmlLoader2 = new FXMLLoader(HelloApplication.class.getResource("inscription-view.fxml"));
+//        Parent sceneget2 = fxmlLoader2.load();
+//        //Nouveau stage avec la scene2
+//        Stage stage = (Stage) sceneget2.getScene().getWindow();
+//        stage.setTitle("Formulaire d'inscription");
+//        Scene scene2 = new Scene(sceneget2);
+//        stage.setScene(scene2);
+//        stage.show();
+//    }
+
+    //BUTTON de CONNEXION
     @FXML
-    protected void onValiderButtonClick() throws IOException {
+    protected void onValider() throws IOException {
         welcomeText2.setText("Connexion...");
         String loginnom = nom.getText();
         String loginpassword = password.getText();
@@ -73,7 +98,7 @@ public class HelloController {
 
         if (correctnom && correctpassword) {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("home.fxml"));
+            loader.setLocation(getClass().getResource("hello-view.fxml"));
             Scene scene = new Scene(loader.load());
             Stage stage = new Stage();
             stage.setScene(scene);
@@ -83,19 +108,58 @@ public class HelloController {
         }
     }
 
-    @FXML
-    protected void onNomButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-    }
+    public void onValiderButtonClick() throws IOException {
+        String loginUser = nom.getText();
+        String passwordUser = password.getText();
+        Boolean correctUser = false;
+        Boolean correctPassword = false;
+        try(FileInputStream fuser = new FileInputStream(new File("./files/users.xlsx")))
+        {
+            XSSFWorkbook workbook = new XSSFWorkbook(fuser);
+            Sheet sheet = workbook.getSheetAt(0);
 
-    public void onButtonInscriptionClick(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader2 = new FXMLLoader(HelloApplication.class.getResource("inscription-view.fxml"));
-        Parent sceneget2 = fxmlLoader2.load();
-        //Nouveau stage avec la scene2
-        Stage stage = (Stage) sceneget2.getScene().getWindow();
-        stage.setTitle("Formulaire d'inscription");
-        Scene scene2 = new Scene(sceneget2);
-        stage.setScene(scene2);
-        stage.show();
+            for(int r = 1; r < sheet.getPhysicalNumberOfRows(); r++)
+            {
+                Row row = sheet.getRow(r);
+                Cell userCell = row.getCell(1);
+
+                if(userCell.toString().equals(loginUser)){
+                    correctUser = true;
+                    Cell passwordCell = row.getCell(2);
+                    if(passwordCell.toString().equals(passwordUser)){
+                        correctPassword = true;
+                        break;
+                    }
+                }
+            }
+            if(correctUser && correctPassword)
+            {
+
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(this.getClass().getResource("affichage-view.fxml"));
+                Scene scene = new Scene(loader.load());
+                Stage stage = new Stage();
+                stage.setScene(scene);
+                stage.show();
+            }
+//            else
+//            {
+//                error.setText("ERROR LOGIN or PWD INCORRECT !!");
+//            }
+
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+//        public void onValiderButtonClick() throws IOException {
+//            FXMLLoader loader = new FXMLLoader();
+//            loader.setLocation(this.getClass().getResource("inscription-view.fxml"));
+//            Scene scene = new Scene(loader.load());
+//            Stage stage = new Stage();
+//            stage.setScene(scene);
+//            stage.show();
+//        }
     }
 }

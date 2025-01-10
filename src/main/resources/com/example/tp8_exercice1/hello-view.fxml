@@ -47,7 +47,7 @@
                <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
             </HBox.margin>
          </Label>
-         <TextField fx:id="nom1" alignment="TOP_LEFT" prefHeight="27.0" prefWidth="185.0">
+         <TextField fx:id="password" alignment="TOP_LEFT" prefHeight="27.0" prefWidth="185.0">
             <padding>
                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
             </padding>
@@ -64,7 +64,7 @@
                <Insets top="10.0" />
             </HBox.margin>
          </Button>
-         <Label id="welcomeText2" alignment="TOP_CENTER" textAlignment="CENTER" textFill="#22e418">
+         <Label id="welcomeText2" fx:id="error" alignment="TOP_CENTER" textAlignment="CENTER" textFill="#22e418">
             <HBox.margin>
                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
             </HBox.margin>
