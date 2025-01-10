@@ -9,17 +9,17 @@ public class Taches {
     private String dateLimiteTache;
     private String commentaireTache;
     private String descriptionTache;
-    private String menbreTache;
+    private int idemployé;
     private String prioriteTache;
     private String categorieTache;
 
-    public Taches(int idTache, String nomTache, String dateLimiteTache, String descriptionTache, String commentaireTache, String menbreTache, String prioriteTache, String categorieTache) {
+    public Taches(int idTache, String nomTache, String dateLimiteTache, String descriptionTache, String commentaireTache, int idemploy, String prioriteTache, String categorieTache) {
         this.idTache = idTache;
         this.nomTache = nomTache;
         this.dateLimiteTache = dateLimiteTache;
         this.descriptionTache = descriptionTache;
         this.commentaireTache = commentaireTache;
-        this.menbreTache = menbreTache;
+        this.idemployé = idemploy;
         this.prioriteTache = prioriteTache;
         this.categorieTache = categorieTache;
     }
@@ -27,8 +27,8 @@ public class Taches {
     public int getIdTache() {
         return idTache;
     }
-    public String getMenbreTache() {
-        return menbreTache;
+    public int getidemployé() {
+        return idemployé;
     }
     public String getDescriptionTache() {
         return descriptionTache;
@@ -57,7 +57,7 @@ public class Taches {
                 ", dateLimiteTache='" + dateLimiteTache + '\'' +
                 ", commentaireTache='" + commentaireTache + '\'' +
                 ", descriptionTache='" + descriptionTache + '\'' +
-                ", menbreTache='" + menbreTache + '\'' +
+                ", id employé de tache ='" + idemployé + '\'' +
                 '}';
     }
 
@@ -69,14 +69,14 @@ public class Taches {
     }
 
     //MODIFIER
-    public void modifierUneTache(int idTache, String nomTache, String dateLimiteTache, String descriptionTache, String commentaireTache, String menbreTache) {
+    public void modifierUneTache(int idTache, String nomTache, String dateLimiteTache, String descriptionTache, String commentaireTache, int idemploye) {
         for (Taches tache : taches) {
             if (tache.getIdTache() == idTache) {
                 tache.nomTache = nomTache;
                 tache.dateLimiteTache = dateLimiteTache;
                 tache.descriptionTache = descriptionTache;
                 tache.commentaireTache = commentaireTache;
-                tache.menbreTache = menbreTache;
+                tache.idemployé = idemploye;
                 System.out.println("Tache modifiée : " + tache);
                 return;
             }
@@ -97,11 +97,11 @@ public class Taches {
     }
 
     //ATTRIBUER TACHE
-    public void attribuerUneTache(int idTache, String menbreTache) {
+    public void attribuerUneTache(int idTache, int idemployé) {
         for (Taches tache : taches) {
             if (tache.getIdTache() == idTache) {
-                tache.menbreTache = menbreTache;
-                System.out.println("Tache attribuée à " + menbreTache + " : " + nomTache);
+                tache.idemployé = idemployé;
+                System.out.println("Tache attribuée à " + idemployé + " : " + nomTache);
                 return;
             }
         }
