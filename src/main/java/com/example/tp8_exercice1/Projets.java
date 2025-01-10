@@ -30,12 +30,21 @@ public class Projets {
         this.dateProjet = dateProjet;
     }
 
+
     private List<Projets> projets = new ArrayList<>();
     //CREER
     public void creerProjet(Projets projet) {
         projets.add(projet);
         System.out.println("Nouveau projet : " + projet);
         return;
+    }
+    public Projets getProjetFromID(int ID) {
+        for (Projets proj : projets) {
+            if (proj.getIdProjet() == idProjet) {
+                return proj;
+            }
+        }
+        return null;
     }
 
     //MODIFIER
@@ -52,6 +61,7 @@ public class Projets {
         }
         if(a==true){ System.out.println("Projet " + idProjet + " pas trouvé");}
     }
+
 
     //SUPPRIMER
     public void supprimerProjet(int idProjet) {

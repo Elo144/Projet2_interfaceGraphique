@@ -29,7 +29,7 @@ public class SuiviDesProjets {
     public void setSuiviProjet(int suiviProjet) {
         this.suiviProjet = suiviProjet;
     }
-    public void afficherToutLesProjets(){}
+    public void afficherToutLesProjets(){System.out.println();}
     public void isAdmin(){}
     public void voirAvancementProjet(){}
 }
