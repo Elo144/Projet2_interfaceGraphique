@@ -8,6 +8,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+
+
 <VBox alignment="CENTER" prefHeight="463.0" prefWidth="489.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tp8_exercice1.HelloController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
@@ -19,7 +21,7 @@
       </font></Label>
    <HBox prefHeight="31.0" prefWidth="450.0">
       <children>
-         <Label prefHeight="27.0" prefWidth="114.0" text="Nom">
+         <Label prefHeight="27.0" prefWidth="114.0" text="Nom Prénom">
             <HBox.margin>
                <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
             </HBox.margin>
@@ -39,7 +41,7 @@
    </HBox>
    <HBox prefHeight="43.0" prefWidth="450.0">
       <children>
-         <Label prefHeight="27.0" prefWidth="115.0" text="Password">
+         <Label prefHeight="27.0" prefWidth="115.0" text="Mot de passe">
             <padding>
                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
             </padding>
@@ -59,12 +61,12 @@
    </HBox>
    <HBox alignment="TOP_CENTER" prefHeight="47.0" prefWidth="450.0">
       <children>
-         <Button fx:id="connexionButton" mnemonicParsing="false" onAction="#onValiderButtonClick" text="Connexion">
+         <Button fx:id="ButtonConnexion" mnemonicParsing="false" onAction="#onValiderButtonClick" text="Connexion">
             <HBox.margin>
                <Insets top="10.0" />
             </HBox.margin>
          </Button>
-         <Label id="welcomeText2" fx:id="error" alignment="TOP_CENTER" textAlignment="CENTER" textFill="#22e418">
+         <Label fx:id="error" alignment="TOP_CENTER" textAlignment="CENTER" textFill="#22e418">
             <HBox.margin>
                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
             </HBox.margin>
